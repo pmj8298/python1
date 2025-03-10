@@ -17,6 +17,7 @@ RUN groupadd pkmj && useradd -m -d /home/pkmj -s /bin/bash -g pkmj -G sudo pkmj 
     mkdir -p /home/pkmj/.ssh && \
     chown -R pkmj:pkmj /home/pkmj && \
     echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /home/pkmj/.bashrc && \
+    echo "export PATH=$PATH:/home/pkmj/.local/bin" >> /home/pkmj/.bashrc && \
     chown pkmj:pkmj /home/pkmj/.bashrc && \
     mkdir -p /var/run/sshd && \
     echo "PermitRootLogin no" >> /etc/ssh/sshd_config && \
